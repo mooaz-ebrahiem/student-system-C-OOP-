@@ -1,38 +1,18 @@
+#include"BaseEntity.cpp"
+#include<iostream>
 class Student {
 private:
-	string name;
-	int id;
-	int age;
-	string phonenumber;
+	
 	double gpa;
-}
-public:
-	void setName(int name) {
-		this->name = name;
-	}
-	void setId(int id) {
-		this->id = id;
+
+ public:
+
 	}
 	void setGpa(double gpa) {
 		this->gpa = gpa;
-	}void setPhoneNumber(string phonenumber) {
-		this->phonenumber = phonenumber;
-		}
-	void setAge(int age) {
-		this->age = age;
-	}
-	string getName() {
-		return name;
-	 }
-	int getAge() {
-		return age;
-	}
-	string getNumber() {
-		return phonenumber;
-	}
-	int getId() {
-		return id;
+	
 	}
 	double getGpa() {
 		return gpa;
 	}
+};
