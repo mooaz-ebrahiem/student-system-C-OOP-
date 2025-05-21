@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
-//class inhertince
+class Course;
+//class course
 class BaseEntity {
 	protected:
 	   string name;
@@ -63,6 +64,7 @@ class Student :public BaseEntity {
 
  double gpa;
  Teacher teacher[5];
+ Course course[5];
 	public:
 
 		void setTeacher(Teacher teacher[5]) {
@@ -75,15 +77,24 @@ class Student :public BaseEntity {
 	this->gpa = gpa;
 
 	}
+	void setCourse(Course course[5]) {
+		for (int i = 0; i < 5; i++) {
+			this->course[i] = course[i];
+		}
+	}
 	double getGpa() {
 		return gpa;
 	}
 	Teacher*getTeacher() {
 		return teacher;
 	}
-	
+	Course* getCourse() {
+		return course;
+	}
 };
-class course:public BaseEntity {
+class Course:public BaseEntity {
+private:
+	int StudentId[5];
 public:
 	void setHour(double hour) {
 		this->hour = hour;
@@ -102,6 +113,15 @@ public:
 	}
 	double getHour() {
 		return hour;
+	}
+	void setStudentId(int StudentId[5]) {
+		for (int i = 0; i < 5; i++) {
+			this->StudentId[i] = StudentId[i];
+		}
+	}
+
+	int* getStudentId() {
+		return StudentId;
 	}
 
 
