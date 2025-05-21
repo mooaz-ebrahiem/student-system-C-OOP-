@@ -2,41 +2,63 @@
 using namespace std;
 //class inhertince
 class BaseEntity {
-private:
-string name;
-int id
-	int age;
-string phonenumber;
-public:
-void setName(int name) {
-	this->name = name;
-}
-void setId(int id) {
-	this->id = id;
-}
+	protected:
+	   string name;
+	   int id;
+	   double hour;
 
-void setPhoneNumber(string phonenumber) {
-this->phonenumber = phonenumber;
-}
-void setAge(int age) {
-this->age = age;
-}
-string getName() {
-return name;
-}
-int getAge() {
-return age;
-}
-string getNumber() {
-return phonenumber;
-}
-int getId() {
-return id;
-}};
+		int age;
+	string phonenumber;
+	public:
+	void setName(string name) {
+		this->name = name;
+	}
+	void setId(int id) {
+		this->id = id;
+	}
+
+	void setPhoneNumber(string phonenumber) {
+	this->phonenumber = phonenumber;
+	}
+	void setAge(int age) {
+	this->age = age;
+	}
+	string getName() {
+	return name;
+	}
+	int getAge() {
+	return age;
+	}
+	string getNumber() {
+	return phonenumber;
+	}
+	int getId() {
+	return id;
+	}};
 //class students
-class Teacher{
+class Teacher : public BaseEntity {
+
+private:
+	double salary;
+	int StudentId[5];
+public:
+	void setSalary(double salary) {
+		this->salary = salary;
+	}
+	void setStudentId(int StudentId[5]) {
+		for (int i = 0; i < 5; i++) {
+			this->StudentId[i] = StudentId[i];
+		}
+	}
+
+	int* getStudentId() {
+		return StudentId;
+	}
+	double getSalary() {
+		return salary;
+	}
 };
-class Student {
+class Student :public BaseEntity {
  private:
 
  double gpa;
@@ -54,32 +76,33 @@ class Student {
 
 	}
 	double getGpa() {
-	return gpa;
+		return gpa;
+	}
 	Teacher*getTeacher() {
 		return teacher;
 	}
-	}
+	
 };
-//class techer 
-class Teacher : public BaseEntity {
+class course:public BaseEntity {
+public:
+	void setHour(double hour) {
+		this->hour = hour;
+	}
+	void setName(string name) {
+		this->name = name;
+	}
+	void setId(int id) {
+		this->id = id;
+	}
+	int getId() {
+		return id;
+	}
+	string getName() {
+		return name;
+	}
+	double getHour() {
+		return hour;
+	}
 
-	private:
-	double salary;
-	int StudentId[5];
-	public:
-	void setSalary(double salary) {
-		this->salary = salary;
-	}
-	void setStudentId(int StudentId[5]) {
-		for (int i = 0; i < 5; i++) {
-			this->StudentId[i] == StudentId[i];
-		}
-	}
 
-	int* getStudentId() {
-		return StudentId; 
-	}
-	double getSalary() {
-		return salary;
-	}
 };
